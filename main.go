@@ -50,9 +50,7 @@ func CORS() gin.HandlerFunc {
 	}
 }
 
-func initGin() {
-	ginInstance = gin.Default()
-	ginInstance.LoadHTMLGlob("html/*")
+func initUse() {
 	logFile, err := os.Create(common.LogFile)
 	if err != nil {
 		panic(err)
@@ -72,6 +70,11 @@ func initGin() {
 		)
 	}))
 	ginInstance.Use(CORS())
+}
+
+func initGin() {
+	ginInstance = gin.Default()
+	initUse()
 	ginInstance.GET("/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")
 	})

@@ -26,6 +26,7 @@ type ResourceResp struct {
 }
 
 func RegisterHandler(router *gin.Engine) {
+	router.LoadHTMLGlob("html/*")
 
 	router.GET("/welcome", func(ctx *gin.Context) {
 		common.State = utils.GenString()
