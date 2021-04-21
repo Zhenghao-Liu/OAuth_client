@@ -17,10 +17,13 @@ const (
 	LogFile = "output/log/gin.log"
 )
 
+var (
+	AppID     string
+	AppSecret string
+)
+
 // CONST
 const (
-	AppID             = "g3*sj1qdrr@sdhm-nes&qn5shpgwy2c=d3z6^7ymr1zzuew=pd))@(qwcd=ucjqq"
-	AppSecret         = "365=h2gmlic$atxv$58rt(j(^0glmykjq)6!t)n%#=1wheo8r1!hwv8-=&$$te-^"
 	StringAll         = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	StringUpper       = 64
 	TokenType         = "bearer"

@@ -6,6 +6,7 @@ import (
 	"github.com/Zhenghao-Liu/OAuth_client/utils"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"net/url"
 )
 
 func RegisterHandler(router *gin.Engine) {
@@ -15,8 +16,8 @@ func RegisterHandler(router *gin.Engine) {
 		common.State = utils.GenString()
 		tarUrl := common.OAuthPage +
 			common.OAuthWelcome +
-			"?app_id=g3*sj1qdrr%40sdhm-nes%26qn5shpgwy2c%3Dd3z6%5E7ymr1zzuew%3Dpd))%40(qwcd%3Ducjqq&" +
-			"redirect_url=" + common.Callback + "&" +
+			"?app_id=" + url.QueryEscape(common.AppID) + "&" +
+			"callback=" + common.Callback + "&" +
 			"response_type=code&" +
 			"state=" + common.State
 		ctx.HTML(http.StatusOK, "welcome.html", gin.H{

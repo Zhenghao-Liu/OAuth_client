@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/Zhenghao-Liu/OAuth_client/common"
 	"github.com/Zhenghao-Liu/OAuth_client/handler"
+	"github.com/Zhenghao-Liu/OAuth_client/remote"
 	"github.com/Zhenghao-Liu/OAuth_client/utils"
 	"github.com/gin-gonic/gin"
 	"io"
@@ -16,7 +17,7 @@ var (
 )
 
 func main() {
-	//remote.CreateOAuthInfo()
+	remote.CreateOAuthInfo()
 	initUtils()
 	initGin()
 	initHandler()

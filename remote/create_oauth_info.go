@@ -2,7 +2,6 @@ package remote
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/Zhenghao-Liu/OAuth_client/common"
 	"io/ioutil"
 	"net/http"
@@ -36,7 +35,6 @@ func CreateOAuthInfo() {
 	} else if createOauthResp.Final != common.StatusSuccess {
 		panic(createOauthResp.Final)
 	}
-	fmt.Println("app_id: ", common.AppID)
-	fmt.Println("app_secret: ", common.AppSecret)
-	panic("请修改const中的常量，并注释该函数，后重新运行")
+	common.AppID = createOauthResp.AppID
+	common.AppSecret = createOauthResp.Appsecret
 }
